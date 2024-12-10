@@ -9,9 +9,10 @@ contract Staking is ReentrancyGuard, Ownable {
     IERC20 public token; // mismo token para staking y recompensas
 
     // Constantes para mayor claridad
-    uint256 public constant EPOCH_DURATION = 10; 
     // Nota: 10 segundos por epoch es sólo un ejemplo. Ajustar a 43200 (12h) en producción.
-    uint256 public constant PRECISION = 1e18;
+    uint256 public constant EPOCH_DURATION = 10; 
+
+    uint256 public constant PRECISION = 1e8;
 
     // Suponemos ya transferidos 1,100,000 tokens al contrato antes de startRewards
     // 1,100,000 * 10^8 = 110,000,000,000,000 (1.1e14)

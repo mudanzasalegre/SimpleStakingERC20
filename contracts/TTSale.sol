@@ -2,17 +2,17 @@
 pragma solidity 0.8.28;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "./TTERC20.sol";
 
 contract TTSale is Ownable, ReentrancyGuard {
     TTERC20 public token;
 
-    // Precio: 1 ETH = 11,000 tokens con 8 decimales
-    // 11,000 * 10^8 = 1,100,000,000,000 (1.1e12)
-    uint256 public constant TOKENS_PER_ETH = 1_100_000_000_000;
+    // Precio: 1 ETH = 10,000 tokens con 8 decimales
+    // 10,000 * 10^8 = 1,000,000,000,000 (1e12)
+    uint256 public constant TOKENS_PER_ETH = 10_000 * 10**8;
     // 10% del total anterior:
-    uint256 public constant STAKING_AMOUNT = 110_000_000_000; // (TOKENS_PER_ETH / 10)
+    uint256 public constant STAKING_AMOUNT = 1_100_000 * 10**8; // (TOKENS_PER_ETH / 10)
 
     bool public stakingMintDone;
 
